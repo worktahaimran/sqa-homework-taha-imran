@@ -76,16 +76,16 @@ See `artifacts/ai-workflow.md`.
 
 ## Submission checklist
 
-- [ ] Repo named sqa-homework-<first-last> and default branch is main
-- [ ] Submitted as a new email with subject "Senior Quality Assurance Engineer – Take-Home Submission"
-- [ ] README includes exact Setup + run commands (verified from a clean clone)
-- [ ] README word count <= 500 (excluding commands/checkboxes)
-- [ ] Max 8 tests; all 4 required behaviors covered
-- [ ] artifacts/assertions.md included (<= 300 words)
-- [ ] At least one assertion wired into an LLM-evaluation framework and running as part of the suite
-- [ ] artifacts/ux-review.md included (<= 400 words, desktop + mobile, post-signup exploration, 3-5 prioritized improvements)
-- [ ] artifacts/data-checks.md included (<= 300 words + SQL: expected data, verification queries, one pipeline integrity check)
-- [ ] artifacts/ai-workflow.md included (<= 300 words, all 4 questions answered)
-- [ ] artifacts/report/ included (or hosted link + screenshot)
-- [ ] artifacts/demo.mp4 included (60-90 sec, narrated: suite + report + one Part 2 assertion explained)
-- [ ] Commit history shows how the work evolved
+- [x] Repo named sqa-homework-<first-last> and default branch is main
+- [x] Submitted as a new email with subject "Senior Quality Assurance Engineer – Take-Home Submission"
+- [x] README includes exact Setup + run commands (verified from a clean clone)
+- [x] README word count <= 500 (excluding commands/checkboxes)
+- [x] Max 8 tests; all 4 required behaviors covered
+- [x] artifacts/assertions.md included (<= 300 words)
+- [x] At least one assertion wired into an LLM-evaluation framework and running as part of the suite
+- [x] artifacts/ux-review.md included (<= 400 words, desktop + mobile, post-signup exploration, 3-5 prioritized improvements)
+- [x] artifacts/data-checks.md included (<= 300 words + SQL: expected data, verification queries, one pipeline integrity check)
+- [x] artifacts/ai-workflow.md included (<= 300 words, all 4 questions answered)
+- [x] artifacts/report/ included (or hosted link + screenshot)
+- [x] artifacts/demo.mp4 included (60-90 sec, narrated: suite + report + one Part 2 assertion explained)
+- [x] Commit history shows how the work evolved
