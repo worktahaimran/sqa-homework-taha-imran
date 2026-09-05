@@ -1,10 +1,17 @@
 import { Page } from '@playwright/test';
 import { chatInput, stopButton } from './locators';
 
+// The cookie dialog can render a moment after reload rather than being
+// present immediately, so an instant isVisible() check can miss it -- it then
+// pops up later and covers the input, hanging any subsequent fill()/click().
+// Waiting (briefly) for it to appear, instead of polling once, closes that race.
 async function dismissCookieBanner(page: Page) {
   const rejectAll = page.getByRole('button', { name: 'Reject All' });
-  if (await rejectAll.isVisible().catch(() => false)) {
+  try {
+    await rejectAll.waitFor({ state: 'visible', timeout: 5_000 });
     await rejectAll.click();
+  } catch {
+    // banner never showed up in this context; nothing to dismiss
   }
 }
 
