@@ -29,7 +29,7 @@ Run the Promptfoo structural check (no API key needed):
 npm run eval                  # captures a live answer, then runs promptfoo -> artifacts/report/promptfoo.html
 ```
 
-## Test strategy
+## Test strategy (TL;DR)
 
 8 tests, chosen deliberately: 4 mandated by the brief (landing render, pill
 click + semantic assertions, free-text question, Shift+Enter), 4 judgment
@@ -63,7 +63,9 @@ structural, never an exact string.
   are the highest-value coverage after the required 4; navigation and mobile
   round out pre-login coverage without touching auth.
 
-AI disclosure: see `artifacts/ai-workflow.md`.
+## AI disclosure
+
+See `artifacts/ai-workflow.md`.
 
 ## Next steps
 
