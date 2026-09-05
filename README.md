@@ -69,10 +69,16 @@ AI disclosure: see `artifacts/ai-workflow.md`.
 
 ## Submission checklist
 
-- [ ] `npm install && npx playwright install --with-deps chromium` succeeds from a clean clone
-- [ ] `npm test` passes locally (8/8)
-- [ ] `npm run eval` passes locally (6/6 Promptfoo fixtures)
-- [ ] `artifacts/report/index.html` and `artifacts/report/promptfoo.html` are up to date
-- [ ] `artifacts/assertions.md` reflects the current assertions
-- [ ] `artifacts/ai-workflow.md` (AI disclosure) added — not part of this suite
-- [ ] Commit history reads as incremental steps, not one large commit
+- [ ] Repo named sqa-homework-<first-last> and default branch is main
+- [ ] Submitted as a new email with subject "Senior Quality Assurance Engineer – Take-Home Submission"
+- [ ] README includes exact Setup + run commands (verified from a clean clone)
+- [ ] README word count <= 500 (excluding commands/checkboxes)
+- [ ] Max 8 tests; all 4 required behaviors covered
+- [ ] artifacts/assertions.md included (<= 300 words)
+- [ ] At least one assertion wired into an LLM-evaluation framework and running as part of the suite
+- [ ] artifacts/ux-review.md included (<= 400 words, desktop + mobile, post-signup exploration, 3-5 prioritized improvements)
+- [ ] artifacts/data-checks.md included (<= 300 words + SQL: expected data, verification queries, one pipeline integrity check)
+- [ ] artifacts/ai-workflow.md included (<= 300 words, all 4 questions answered)
+- [ ] artifacts/report/ included (or hosted link + screenshot)
+- [ ] artifacts/demo.mp4 included (60-90 sec, narrated: suite + report + one Part 2 assertion explained)
+- [ ] Commit history shows how the work evolved
