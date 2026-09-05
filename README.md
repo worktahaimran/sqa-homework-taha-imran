@@ -4,13 +4,17 @@ Pre-login only. No test ever signs up or logs in.
 
 ## Setup
 
+Requires Node 20+ (Playwright 1.63's minimum; this was built and verified on 22).
+
 ```bash
 git clone <this-repo-url>
 cd sqa-homework-taha-imran
-nvm use                       # Node >=20 required (Playwright 1.63); .nvmrc pins 22
 npm install
 npx playwright install --with-deps chromium
 ```
+
+Already on Node 20+? The commands above work as-is. If you use nvm and want to
+match the version this was built on, run `nvm use` first (reads `.nvmrc`).
 
 Run the suite:
 
