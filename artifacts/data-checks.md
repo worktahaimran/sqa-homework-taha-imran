@@ -6,7 +6,7 @@ Creating an account. Signup is staged, and the writes are staged with it. users 
 
 Downstream pipeline check. Balance reconciliation. For every user, wallet_balances.amount must equal SUM(wallet_transactions.amount). Any drift means the ledger and the displayed number have diverged, which is the one thing a rewards product cannot get wrong. I'd run it on every load and alert on a non-empty result rather than letting it land silently in a dashboard.
 
-sql
+```sql
 -- 1. Every agent turn belongs to a conversation, and every conversation has turns.
 SELECT m.id, m.conversation_id
 FROM messages m
@@ -41,3 +41,4 @@ FROM wallet_balances b
 LEFT JOIN wallet_transactions t ON t.user_id = b.user_id
 GROUP BY b.user_id, b.amount
 HAVING b.amount <> COALESCE(SUM(t.amount), 0);
+```
