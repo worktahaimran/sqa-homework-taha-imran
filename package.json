@@ -1,0 +1,21 @@
+{
+  "name": "sqa-homework-taha-imran",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report artifacts/report",
+    "capture:response": "node scripts/capture-response.js",
+    "eval": "npm run capture:response && promptfoo eval -c promptfooconfig.yaml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "typescript": "^7.0.2"
+  }
+}

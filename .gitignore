@@ -1,0 +1,4 @@
+node_modules/
+test-results/
+artifacts/captured-response.txt
+.env
