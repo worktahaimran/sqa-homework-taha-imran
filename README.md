@@ -44,8 +44,9 @@ structural, never an exact string.
 
 - **Locators + waiting survive UI change**: message bubbles have no test id,
   only brittle Tailwind classes (`div.flex.justify-start/justify-end`),
-  isolated to one place (`tests/locators.ts`) with a comment on what to fix if
-  the markup shifts. Response completion is never detected by polling text
+  isolated to one shared module (`selectors.js`) that both `tests/locators.ts`
+  and `scripts/capture-response.js` import, so there's exactly one place to fix
+  if the markup shifts. Response completion is never detected by polling text
   (non-deterministic) — it's read off the send/stop button swap, the one
   stable state signal the app exposes (`waitForAgentResponse` in
   `tests/helpers.ts`).

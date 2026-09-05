@@ -1,4 +1,5 @@
 import { Page } from '@playwright/test';
+import { AGENT_MESSAGE_SELECTOR, USER_MESSAGE_SELECTOR } from '../selectors';
 
 export const PILL_LABELS = [
   'What is Permission',
@@ -19,8 +20,7 @@ export const signUpButton = (page: Page) => page.getByTestId('sign-up-button');
 export const pill = (page: Page, label: (typeof PILL_LABELS)[number]) =>
   page.getByRole('button', { name: label, exact: true });
 
-// WEAK POINT: there are no test ids on chat messages, so bubble side is read
-// from Tailwind utility classes. If the markup changes, update these two
-// locators only -- every spec reads messages through them, never the raw class.
-export const agentMessages = (page: Page) => page.locator('div.flex.justify-start');
-export const userMessages = (page: Page) => page.locator('div.flex.justify-end');
+// WEAK POINT: see ../selectors.js -- these are the only two consumers of the
+// raw Tailwind strings. Every spec reads messages through these, never the class.
+export const agentMessages = (page: Page) => page.locator(AGENT_MESSAGE_SELECTOR);
+export const userMessages = (page: Page) => page.locator(USER_MESSAGE_SELECTOR);

@@ -7,6 +7,7 @@
 const { chromium } = require('@playwright/test');
 const fs = require('fs');
 const path = require('path');
+const { AGENT_MESSAGE_SELECTOR } = require('../selectors');
 
 const BASE_URL = 'https://ask.permission.ai';
 const OUT_PATH = path.join(__dirname, '..', 'artifacts', 'captured-response.txt');
@@ -29,7 +30,7 @@ const OUT_PATH = path.join(__dirname, '..', 'artifacts', 'captured-response.txt'
   await stop.waitFor({ state: 'visible', timeout: 15_000 });
   await stop.waitFor({ state: 'hidden', timeout: 45_000 });
 
-  const answer = (await page.locator('div.flex.justify-start').last().textContent()) ?? '';
+  const answer = (await page.locator(AGENT_MESSAGE_SELECTOR).last().textContent()) ?? '';
   await browser.close();
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
