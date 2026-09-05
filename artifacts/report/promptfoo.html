@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Structural quality check for "What is Permission" answers. Deterministic -- no LLM grader, no API key, no external calls beyond the one live capture step (npm run capture:response) that refreshes the first fixture.
+</title>
+    <style>
+      body {
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        word-break: break-all;
+      }
+      th,
+      td {
+        padding: 5px;
+        min-width: 200px;
+        white-space: pre-wrap;
+        vertical-align: top;
+      }
+
+      tr > td[data-content^='[PASS]'] {
+        color: green;
+      }
+      tr > td[data-content^='[FAIL]'] {
+        color: #ad0000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        
+        <th>answer</th>
+        
+        <th>expectPass</th>
+        
+        <th>[echo] {{answer}}</th>
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          <td data-content="file://artifacts/captured-response.txt">file://artifacts/captured-response.txt</td>
+          
+          <td data-content="true">true</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Permission is your personalized data broker. It helps you earn from your data. The more you share, the more you earn. Your AI agent manages your wallet, tracks earnings, and finds new opportunities for you. Would you like to know how you can earn ASK tokens, or perhaps learn about data ownership and control?05:36 AM
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Permission is your personalized data broker. It helps you earn from your data. The more you share, the more you earn. Your AI agent manages your wallet, tracks earnings, and finds new opportunities for you. Would you like to know how you can earn ASK tokens, or perhaps learn about data ownership and control?05:36 AM
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Permission.ai acts as your personalized data broker. It helps you earn from your data by rewarding you when your data is shared or accessed. The more you share, the more you can earn, always with your AI agent helping to manage your wallet and find opportunities.
+">Permission.ai acts as your personalized data broker. It helps you earn from your data by rewarding you when your data is shared or accessed. The more you share, the more you can earn, always with your AI agent helping to manage your wallet and find opportunities.
+</td>
+          
+          <td data-content="true">true</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Permission.ai acts as your personalized data broker. It helps you earn from your data by rewarding you when your data is shared or accessed. The more you share, the more you can earn, always with your AI agent helping to manage your wallet and find opportunities.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Permission.ai acts as your personalized data broker. It helps you earn from your data by rewarding you when your data is shared or accessed. The more you share, the more you can earn, always with your AI agent helping to manage your wallet and find opportunities.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Permission.ai is a platform that helps you earn from your data. It acts as your personalized data broker. The more data you choose to share, the more you can earn, always with an AI agent to manage your earnings and find new opportunities.
+">Permission.ai is a platform that helps you earn from your data. It acts as your personalized data broker. The more data you choose to share, the more you can earn, always with an AI agent to manage your earnings and find new opportunities.
+</td>
+          
+          <td data-content="true">true</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Permission.ai is a platform that helps you earn from your data. It acts as your personalized data broker. The more data you choose to share, the more you can earn, always with an AI agent to manage your earnings and find new opportunities.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Permission.ai is a platform that helps you earn from your data. It acts as your personalized data broker. The more data you choose to share, the more you can earn, always with an AI agent to manage your earnings and find new opportunities.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="You can earn ASK by sharing your data through your Permission Wallet, and your AI agent manages the broker relationship on your behalf while keeping your data ownership intact.
+">You can earn ASK by sharing your data through your Permission Wallet, and your AI agent manages the broker relationship on your behalf while keeping your data ownership intact.
+</td>
+          
+          <td data-content=""></td>
+          
+          <td data-content="[PASS] (1.00)
+
+You can earn ASK by sharing your data through your Permission Wallet, and your AI agent manages the broker relationship on your behalf while keeping your data ownership intact.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+You can earn ASK by sharing your data through your Permission Wallet, and your AI agent manages the broker relationship on your behalf while keeping your data ownership intact.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Great question! Permission is best understood once you tell me more -- could you clarify what specifically about earning or data you&#39;re curious about?
+">Great question! Permission is best understood once you tell me more -- could you clarify what specifically about earning or data you&#39;re curious about?
+</td>
+          
+          <td data-content=""></td>
+          
+          <td data-content="[PASS] (1.00)
+
+Great question! Permission is best understood once you tell me more -- could you clarify what specifically about earning or data you&#39;re curious about?
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Great question! Permission is best understood once you tell me more -- could you clarify what specifically about earning or data you&#39;re curious about?
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="I&#39;m just an AI, so I can&#39;t share specifics about Permission, but you can check our website for more info.
+">I&#39;m just an AI, so I can&#39;t share specifics about Permission, but you can check our website for more info.
+</td>
+          
+          <td data-content=""></td>
+          
+          <td data-content="[PASS] (1.00)
+
+I&#39;m just an AI, so I can&#39;t share specifics about Permission, but you can check our website for more info.
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+I&#39;m just an AI, so I can&#39;t share specifics about Permission, but you can check our website for more info.
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+description: >
+  Structural quality check for "What is Permission" answers. Deterministic --
+  no LLM grader, no API key, no external calls beyond the one live capture
+  step (npm run capture:response) that refreshes the first fixture.
+
+prompts:
+  - '{{answer}}'
+
+providers:
+  - id: echo # passes `answer` straight through; nothing to grade generatively
+
+tests:
+  - description: live-captured answer (refreshed by scripts/capture-response.js)
+    vars:
+      expectPass: true
+      answer: file://artifacts/captured-response.txt
+    assert:
+      - type: javascript
+        value: file://promptfoo/expect-quality.js
+
+  - description: reference answer #1 from the brief (real, hand-captured)
+    vars:
+      expectPass: true
+      answer: >
+        Permission.ai acts as your personalized data broker. It helps you earn
+        from your data by rewarding you when your data is shared or accessed.
+        The more you share, the more you can earn, always with your AI agent
+        helping to manage your wallet and find opportunities.
+    assert:
+      - type: javascript
+        value: file://promptfoo/expect-quality.js
+
+  - description: reference answer #2 from the brief (real, hand-captured)
+    vars:
+      expectPass: true
+      answer: >
+        Permission.ai is a platform that helps you earn from your data. It
+        acts as your personalized data broker. The more data you choose to
+        share, the more you can earn, always with an AI agent to manage your
+        earnings and find new opportunities.
+    assert:
+      - type: javascript
+        value: file://promptfoo/expect-quality.js
+
+  - description: BAD -- on-topic keyword stuffing with no actual definition
+    vars:
+      expectPass: false
+      answer: >
+        You can earn ASK by sharing your data through your Permission Wallet,
+        and your AI agent manages the broker relationship on your behalf while
+        keeping your data ownership intact.
+    assert:
+      - type: javascript
+        value: file://promptfoo/expect-quality.js
+
+  - description: BAD -- deflection dressed up as an answer
+    vars:
+      expectPass: false
+      answer: >
+        Great question! Permission is best understood once you tell me more
+        -- could you clarify what specifically about earning or data you're
+        curious about?
+    assert:
+      - type: javascript
+        value: file://promptfoo/expect-quality.js
+
+  - description: BAD -- refusal dressed up as an answer
+    vars:
+      expectPass: false
+      answer: >
+        I'm just an AI, so I can't share specifics about Permission, but you
+        can check our website for more info.
+    assert:
+      - type: javascript
+        value: file://promptfoo/expect-quality.js
